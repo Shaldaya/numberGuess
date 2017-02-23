@@ -1,0 +1,35 @@
+using UnityEngine;
+using System.Collections;
+
+public class whileLoop : MonoBehaviour {
+	
+	void Start () {
+		Random rnd = new Random();
+		int correctAnswer = 8;
+		int computerGuess = Random.Range(1,10);
+		int attempts = 0;
+		
+		while (computerGuess != correctAnswer)
+		{
+			if (computerGuess > correctAnswer) 
+			{
+				Debug.Log (computerGuess + " is incorrect. Number of attempts = " + attempts);
+				computerGuess -- ;
+				attempts += 1;
+			}
+			if (computerGuess < correctAnswer)
+			{
+				Debug.Log (computerGuess + " is incorrect. Number of attempts = " + attempts);
+				computerGuess ++ ;
+				attempts += 1;
+			}
+			while (computerGuess == correctAnswer)
+			{
+				Debug.Log (correctAnswer + " is correct. Total number of attempts = " + attempts);
+
+				break;
+			}
+		}
+	}
+
+}
